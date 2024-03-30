@@ -52,6 +52,67 @@ These are compiled into instructions.
 The assembler coverts the instructions into the binary code(machine language programme).
 The instructions acts as an abstract interface.
 
+ASIC design:
+
+ASIC design requires three important elements:
+1. RTL designs
+2. EDA tools
+3. PDK data
+
+An opensource ASIC design requires opensource RTL designs, opensource EDA tools and opensource PDK data.
+Some opensource RTL design sites are Librecores.org, Opencores.org, and Github.com.
+Some opensource EDA tools are Qflow, Openroad, and Openlane.
+
+PDK(Process Design Kit):
+It is a collection of files used to model a fabrication process for the EDA tools used to design an IC.
+
+Simplified RTL to GDSII flow:
+
+The major processes invovled are :
+1. Synthesis
+2. Floor/Power planning
+3. Placement
+4. Clock Tree Synthesis
+5. Routing
+6. Sign off
+
+Synthesis: Converts RTL to a circuit  out of components from the standard cell library.
+
+FP+PP:
+Macro floor planning - define dimensions, pin locations and rows definition.
+Power planning - the power network is constructed.
+
+Placement: place the cells on the power plan rows, aligned with the sites.
+
+CTS: create a clock distribution network.
+
+Routing: implement the interconnect using the available metal layers.
+
+Sign off: once done with routing,we construct the final layout, which undergoes physical verfication and timing verification.
+
+Openlane started out as an open source flow for a true open source tape out experiment.
+
+striVe SoC family:
+1. striVe   - Sky130 SCL + Synthesized 1 Kbytes SRAM
+2. striVe2  - Sky130 SCL + 1 Kbytes OpenRAM block
+3. striVe2a - striVe2 with a single chip core module
+4. striVe3  - OSU SCL + Synthesized 1 Kbytes SRAM
+5. striVe5  - Sky130 SCL + 8*1 Kbytes OpenRAM banks
+6. striVe6  - striVe2 with DFT
+
+Main goal of OpenLane : Produce a clean*GDSII with no human intervention.
+
+*clean means: 
+1. No LVS violations
+2. No DRC violations
+3. No timing violations
+
+![image](https://github.com/gauravh-03/VSDIAT_Advanced_Physical_Design/assets/165159967/68d01b3a-99d6-4605-80d4-c46cb8d409da)
+OPENLANE ASIC FLOW CHART
+
+
+
+
 
 
 
